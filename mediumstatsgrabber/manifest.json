@@ -3,7 +3,7 @@
 
   "name": "Medium Stats Grabber",
   "description": "This extension will grab the story stats from your Medium.com stats page and save them as tabular data (csv with '|' delimiter)",
-  "version": "1.0",
+  "version": "1.1",
 
   "content_scripts": [
   {
