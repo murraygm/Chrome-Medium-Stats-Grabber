@@ -28,6 +28,9 @@ chrome.runtime.onMessage.addListener(
 			alert("Please select the 'Stories' view and try again");
 		} else {;
 
+			var statType = document.querySelectorAll("h1")[0];
+			var statsfrom = "";
+
 	    	var content = "mediumID|title|link|publication|mins|views|reads|readRatio|fans|pubDate"+ "\n";
 			var rows = document.querySelectorAll(".sortableTable-row.js-statsTableRow");
 			rows.forEach(function(row) {
@@ -36,7 +39,13 @@ chrome.runtime.onMessage.addListener(
 				var link = row.querySelectorAll("a.sortableTable-link")[1].href;
 				var publicationtxt = row.querySelectorAll("a.sortableTable-link")[0].innerText;
 				if(publicationtxt == "View story"){
-					var publication = "Not in publication";
+					if(statType.innerText == "Stats"){
+						var publication = "Not in publication";
+					} else {
+						var publicationStats = document.querySelectorAll("h1.hero-title")[0].innerText;
+						var publication = publicationStats.substring(0,publicationStats.lastIndexOf(" stats"));
+					};
+					
 				} else {
 					var publication = publicationtxt;
 				};
@@ -51,10 +60,7 @@ chrome.runtime.onMessage.addListener(
 			});
 
 			
-
-
-			var statType = document.querySelectorAll("h1")[0];
-			var statsfrom = "";
+			
 			if(statType.innerText == "Stats"){
 				statsfrom = "MyStats"; 
 			} else {
