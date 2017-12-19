@@ -31,23 +31,27 @@ chrome.runtime.onMessage.addListener(
 			var statType = document.querySelectorAll("h1")[0];
 			var statsfrom = "";
 
-	    	var content = "mediumID|title|link|publication|mins|views|reads|readRatio|fans|pubDate"+ "\n";
+	    	var content = "mediumID|title|link|publication|mins|views|reads|readRatio|fans|pubDate|liveDate"+ "\n";
 			var rows = document.querySelectorAll(".sortableTable-row.js-statsTableRow");
 			rows.forEach(function(row) {
 				var mediumID = row.getAttribute("data-action-value");
 				var title = row.querySelectorAll("h2.sortableTable-title")[0].innerText;
-				var link = row.querySelectorAll("a.sortableTable-link")[1].href;
+				
 				var publicationtxt = row.querySelectorAll("a.sortableTable-link")[0].innerText;
 				if(publicationtxt == "View story"){
 					if(statType.innerText == "Stats"){
 						var publication = "Not in publication";
+						
 					} else {
 						var publicationStats = document.querySelectorAll("h1.hero-title")[0].innerText;
 						var publication = publicationStats.substring(0,publicationStats.lastIndexOf(" stats"));
+						
 					};
-					
+					var link = row.querySelectorAll("a.sortableTable-link")[0].href;
 				} else {
 					var publication = publicationtxt;
+					var link = row.querySelectorAll("a.sortableTable-link")[1].href;
+
 				};
 				var mins = row.querySelectorAll("span.readingTime")[0].title;
 				var values = row.querySelectorAll(".sortableTable-value");
@@ -56,7 +60,10 @@ chrome.runtime.onMessage.addListener(
 				var readRatio = values[3].innerText;
 				var fans = values[4].innerText;
 				var pubDate = new Date(parseInt(row.getAttribute("data-timestamp"))).toISOString().slice(0, 10);
-				content += mediumID + "|" + title + "|" + link + "|" + publication + "|" + mins + "|" + views + "|" + reads + "|" + readRatio + "|" + fans + "|" + pubDate +"\n";
+				var liveDate = new Date(parseInt(values[0].innerText)).toISOString().slice(0, 10);
+				content += mediumID + "|" + title + "|" + link + "|" + publication + "|" + mins + "|" + views + "|" + reads + "|" + readRatio + "|" + fans + "|" + pubDate + "|" + liveDate +"\n";
+				
+
 			});
 
 			
