@@ -1,5 +1,8 @@
 # Chrome-Medium-Stats-Grabber
 
+Update - 2018/09/25
+* fixed scraping bug that was stopping extension from creating dataset
+
 A quick and dirty Google.Chrome extension that grabs story stats from your Medium.com stats page and saves them as a .CSV file. 
 * Once installed in Chrome, [direct](https://chrome.google.com/webstore/detail/medium-stats-grabber/gdomhiacoiloiecaholjiegdaklelpig?hl=en-US) or download and goto extensions and tick the 'developer mode' option and then add using the 'Load and unpack extension...' button). 
 * Log into your Medium.com site, go to your Stats page and scroll to the last item you want the stats for (as Medium uses infinite scrolling). 
