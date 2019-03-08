@@ -35,7 +35,7 @@ chrome.runtime.onMessage.addListener(
 			var rows = document.querySelectorAll(".sortableTable-row.js-statsTableRow");
 			rows.forEach(function(row) {
 				var mediumID = row.getAttribute("data-action-value");
-				var title = row.querySelectorAll("a.sortableTable-title")[0].innerText;
+				var title = row.querySelectorAll(".sortableTable-title a")[0].innerText;
 				
 				var publicationtxt = row.querySelectorAll("a.sortableTable-link")[0].innerText;
 				if(publicationtxt == "View story"){
