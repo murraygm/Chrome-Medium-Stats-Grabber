@@ -1,5 +1,9 @@
 # Chrome-Medium-Stats-Grabber
 
+Update - 2021/08/23
+* fixed another similar scraping bug (caused by Medium CSS update) that was stopping extension from creating dataset
+
+
 Update - 2019/03/08
 * fixed similar scraping bug (caused by Medium CSS update) that was stopping extension from creating dataset
 

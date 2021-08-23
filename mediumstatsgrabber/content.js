@@ -39,7 +39,7 @@ chrome.runtime.onMessage.addListener(
 				
 				var publicationtxt = row.querySelectorAll("a.sortableTable-link")[0].innerText;
 				if(publicationtxt == "View story"){
-					if(statType.innerText == "Stats"){
+					if(statType.innerText.includes("Your stats")){
 						var publication = "Not in publication";
 						
 					} else {
@@ -68,7 +68,7 @@ chrome.runtime.onMessage.addListener(
 
 			
 			
-			if(statType.innerText == "Stats"){
+			if(statType.innerText.includes("Your stats")){
 				statsfrom = "MyStats"; 
 			} else {
 				statsfrom = document.querySelectorAll("h1.hero-title")[0].innerText;
