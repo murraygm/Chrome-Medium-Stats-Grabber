@@ -1,6 +1,6 @@
 # Chrome-Medium-Stats-Grabber
 
-## Update - 2023/08/25
+# Update - 2023/08/25
 * OK THAT'S A WRAP - MEDIUM HAS CHANGED THE PAGE THIS TOOL NO LONGER WORKS AS INTENDED 
 
 
@@ -14,7 +14,7 @@
 
 
 
-## previous updates
+# previous updates
 Update - 2021/08/23
 * fixed another similar scraping bug (caused by Medium CSS update) that was stopping extension from creating dataset
 
